@@ -1,0 +1,62 @@
+<div *ngIf="checkIfVisible()">
+  <div>
+    <div *ngIf="messageReplyTo != null" class="reply-container">
+      <div class="reply-username">{{ messageReplyTo.userName }}</div>
+      <div class="reply-message">{{ messageReplyTo.text }}</div>
+    </div>
+    <div class="userName">{{ message.userName }}</div>
+
+    <div class="message" *ngIf="!isEditEnable">{{ message.text }}</div>
+
+    <div>
+      <input
+        [hidden]="!isEditEnable"
+        value="{{ message.text }}"
+        type="text"
+        #editInput
+      />
+    </div>
+
+    <button
+      (click)="onEdit()"
+      class="edit"
+      *ngIf="loginUserName == message.userName && !isEditEnable"
+    >
+      Edit
+    </button>
+
+    <button
+      class="edit"
+      (click)="editSubmit(editInput.value)"
+      *ngIf="isEditEnable"
+    >
+      Submit
+    </button>
+
+    <button
+      (click)="onDelete()"
+      class="delete"
+      *ngIf="loginUserName == message.userName && !isDeleteEnable"
+    >
+      Delete
+    </button>
+    <label *ngIf="isDeleteEnable">
+      <button
+        (click)="deleteSubmit(rad1.checked ? rad1.value : rad2.value)"
+        class="delete"
+        *ngIf="isDeleteEnable"
+      >
+        Submit deleti
+        <br />
+      </button>
+      <label>
+        <input type="radio" value="Delete" name="delete" checked="true" #rad1 />
+        Delete
+      </label>
+      <label>
+        <input type="radio" value="DeleteForSender" name="delete" #rad2 />
+        Delete for me
+      </label>
+    </label>
+  </div>
+</div>

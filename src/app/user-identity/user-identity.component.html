@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    <label>Username</label>
+    <div>
+      <input type="text" value="FirstUser" #username />
+    </div>
+    <label>Password</label>
+    <div>
+      <input type="text" value="Test123!" #password />
+    </div>
+    <div>
+      <button (click)="onSubmit(username.value, password.value)">Login</button>
+      <button type="button" (click)="goBack()">go back</button>
+    </div>
+    <div>Logins: FirstUser, SecondUser, ThirdUser</div>
+    <div>Password: Test123! for all</div>
+  </div>
+</div>

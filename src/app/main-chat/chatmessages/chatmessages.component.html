@@ -1,0 +1,29 @@
+<div class="chat-container">
+  <ul
+    infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolledUp)="onScroll()"
+    [scrollWindow]="false"
+  >
+    <li class="list" *ngFor="let message of Messages">
+      <app-messages-item
+        [message]="message"
+        [loginUserName]="loginUserName"
+        [messageReplyTo]="
+          message.replyTo == 0 ? undefined : repliedMessage(message.replyTo)
+        "
+      ></app-messages-item>
+
+      <button class="reply" (click)="messageReplyTo(message)">reply</button>
+    </li>
+  </ul>
+  <div class="reply-text" *ngIf="replyTo != 0">
+    You replying to <br />
+    {{ messageToReply.text }}
+  </div>
+  <div class="send-massage-container">
+    <input type="text" #messagetext />
+    <button (click)="onSubmit(messagetext.value)">Send message</button>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+:host {
+  background-color: rgb(214, 238, 238);
+  width: 100%;
+}
+
+.chat-container {
+  height: 95vh;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: left;
+  list-style: none;
+  word-break: break-all;
+  width: 400px;
+  background-color: #e5e3e3;
+  border-radius: 10%;
+  margin-top: 7px;
+  padding: 10px;
+}
+
+.chat-container ul {
+  display: flex;
+
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  height: 91%;
+  margin-bottom: 5px;
+}
+
+.send-massage-container {
+  height: 38px;
+  display: flex;
+}
+
+.send-massage-container input {
+  width: 90%;
+}
+
+.send-massage-container button {
+  width: 10%;
+}
+
+.reply {
+  height: 30px;
+  width: 50px;
+  border-radius: 50%;
+}
+.reply-container {
+  display: flex;
+}
+.reply-text {
+  width: 500px;
+  overflow: hidden;
+}

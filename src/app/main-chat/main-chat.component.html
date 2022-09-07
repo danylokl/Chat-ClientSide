@@ -1,0 +1,12 @@
+<button (click)="onLogout()">Logout</button>
+To change user chats' please reload page again
+<div class="main-container">
+  <div>
+    <ul class="chat-list">
+      <li (click)="redirection(chat.chatId)" *ngFor="let chat of chats">
+        <span routerLink="/chat/{{ chat.chatId }}">{{ chat.chatName }}</span>
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</div>
