@@ -42,7 +42,7 @@ export class MainChatComponent implements OnInit {
     return this.id;
   }
   redirection(id: number) {
-    window.location.href = '/chat/' + id;
+    this.router.navigate(['/chat', id]);
   }
 
   onLogout() {
