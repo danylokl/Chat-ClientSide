@@ -8,6 +8,6 @@ import { LoginService } from './Services/login.service';
 })
 export class AppComponent {
   constructor(private loginservice: LoginService) {}
-  title = 'chat-Reenbit';
+  title = 'chat';
   islogged!: boolean;
 }
