@@ -8,7 +8,7 @@ import { LoginData } from '../Models/loginData.models';
 })
 export class LoginService {
   public loggedin: boolean = false;
-  baseApiUrl: string = 'https://localhost:7075';
+  baseApiUrl: string = 'https://chat-reenbit20220908035012.azurewebsites.net';
   constructor(private http: HttpClient) {}
   onLogin(data: LoginData): Observable<Response> {
     this.loggedin = true;

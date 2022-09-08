@@ -10,7 +10,7 @@ export class SignalrService {
   public hubConnection!: signalR.HubConnection;
   public startConnection = () => {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('https://localhost:7075/chathub', {
+      .withUrl('https://chat-reenbit20220908035012.azurewebsites.net/chathub', {
         withCredentials: true,
       })
       .build();

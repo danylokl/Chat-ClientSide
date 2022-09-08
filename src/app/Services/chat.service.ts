@@ -9,7 +9,7 @@ import { Message } from '../Models/message.models';
   providedIn: 'root',
 })
 export class ChatService {
-  baseApiUrl: string = 'https://localhost:7075';
+  baseApiUrl: string = 'https://chat-reenbit20220908035012.azurewebsites.net';
   constructor(private http: HttpClient) {}
   getAllChats(): Observable<Chat[]> {
     return this.http.get<Chat[]>(this.baseApiUrl + '/Index', {
